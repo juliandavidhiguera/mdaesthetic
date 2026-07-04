@@ -1,0 +1,165 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ácido Hialurónico — Ficha Técnica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>:root {
+    --red:    #E24B4A; --red-bg:  #FCEBEB; --red-dk:  #791F1F; --red-txt: #501313;
+    --amb:    #EF9F27; --amb-bg:  #FAEEDA; --amb-dk:  #633806; --amb-txt: #412402;
+    --blu:    #378ADD; --blu-bg:  #E6F1FB; --blu-dk:  #0C447C; --blu-txt: #042C53;
+    --grn:    #639922; --grn-bg:  #EAF3DE; --grn-dk:  #27500A; --grn-txt: #173404;
+    --gold:   #C6A55A; --gold-dk: #9C8140; --black: #0A0A0A;
+    --gray:   #888780; --border: #E6DEC9; --surface: #FBFAF8; --card: #ffffff;
+    --text:   #1a1a18; --muted:  #6b6459; --subtle:  #a39c8c;
+    --r: 8px; --rl: 12px;
+    --font-h: 'Cormorant Garamond', serif; --font-b: 'DM Sans', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); background: var(--surface); color: var(--text); font-size: 14px; line-height: 1.6; }
+  .header { background: var(--black); border-bottom: 2px solid var(--gold);
+            padding: 16px 16px 12px; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-family: var(--font-h); font-size: 19px; font-weight: 600; letter-spacing: .01em; color: var(--gold); }
+  .header p  { font-size: 11px; color: #c9c4b8; margin-top: 3px; }
+  .alert { border-left: 3px solid var(--red); background: var(--red-bg);
+           border-radius: 0 var(--r) var(--r) 0; padding: 10px 12px;
+           font-size: 13px; color: var(--red-txt); line-height: 1.6; margin-bottom: 12px; }
+  .alert.warn  { border-color: var(--amb); background: var(--amb-bg); color: var(--amb-txt); }
+  .alert.info  { border-color: var(--blu); background: var(--blu-bg); color: var(--blu-txt); }
+  .alert.ok    { border-color: var(--grn); background: var(--grn-bg); color: var(--grn-txt); }
+  .tabs { display: flex; overflow-x: auto; gap: 0; background: var(--black);
+          border-bottom: 2px solid var(--gold); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex-shrink: 0; padding: 11px 14px; font-size: 13px; font-weight: 500; color: #8a8478;
+         border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent;
+         white-space: nowrap; transition: all .15s; font-family: var(--font-b); }
+  .tab.on { color: var(--gold); border-bottom-color: var(--gold); }
+  .content { padding: 14px 16px; max-width: 780px; margin: 0 auto; }
+  .panel { display: none; }
+  .panel.on { display: block; }
+  .sl { font-family: var(--font-h); font-size: 13px; font-weight: 600; letter-spacing: .02em;
+        color: var(--gold-dk); margin: 18px 0 8px; text-transform: none; }
+  .sl:first-child { margin-top: 0; }
+  .tl { border-left: 2px solid var(--border); margin-left: 6px; }
+  .ti { position: relative; padding: 0 0 18px 22px; }
+  .ti:last-child { padding-bottom: 0; }
+  .dot { position: absolute; left: -7px; top: 3px; width: 12px; height: 12px;
+         border-radius: 50%; border: 2px solid var(--surface); }
+  .dot.r { background: var(--red); } .dot.a { background: var(--amb); }
+  .dot.b { background: var(--blu); } .dot.g { background: var(--grn); }
+  .ti-h { font-size: 13px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+  .ti-b { font-size: 13px; color: var(--muted); line-height: 1.65; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px;
+           border-radius: 4px; letter-spacing: .02em; }
+  .br { background: var(--red-bg);  color: var(--red-dk); }
+  .ba { background: var(--amb-bg);  color: var(--amb-dk); }
+  .bb { background: var(--blu-bg);  color: var(--blu-dk); }
+  .bg { background: var(--grn-bg);  color: var(--grn-dk); }
+  ul.cl { list-style: none; padding: 0; }
+  ul.cl li { padding: 3px 0 3px 18px; position: relative; font-size: 13px;
+              color: var(--muted); line-height: 1.55; }
+  ul.cl li::before { content: '○'; position: absolute; left: 0; color: var(--gold); font-size: 11px; top: 4px; }
+  .dc { background: var(--card); border: 1px solid var(--border); border-radius: var(--r);
+        padding: 10px 13px; margin: 8px 0; border-left: 3px solid var(--gold); }
+  .dc-h { font-family: var(--font-h); font-size: 15px; font-weight: 600; margin-bottom: 7px; color: var(--black); }
+  .dc-r { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; }
+  .kv span:first-child { display: block; font-size: 10px; text-transform: uppercase;
+                          letter-spacing: .05em; color: var(--subtle); margin-bottom: 1px; }
+  .kv span:last-child  { font-size: 13px; font-weight: 600; color: var(--black); }
+  .zg { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 8px; margin-top: 6px; }
+  .zc { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 10px 11px; }
+  .zc.r { border-left: 3px solid var(--red); } .zc.a { border-left: 3px solid var(--amb); }
+  .zc.b { border-left: 3px solid var(--blu); }
+  .zc-h { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+  .zc-h.r { color: var(--red-dk); } .zc-h.a { color: var(--amb-dk); } .zc-h.b { color: var(--blu-dk); }
+  .zc p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .tbl-wrap { overflow-x: auto; margin: 8px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 420px; }
+  th { text-align: left; font-size: 10px; font-weight: 700; letter-spacing: .05em;
+       text-transform: uppercase; color: var(--gold-dk); padding: 5px 8px 7px;
+       border-bottom: 2px solid var(--gold); }
+  td { padding: 7px 8px; border-bottom: 1px solid var(--border); color: var(--muted); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { color: var(--black); font-weight: 600; }
+  .sep { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 8px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--rl); padding: 12px 13px; }
+  .card h3 { font-family: var(--font-h); font-size: 14px; font-weight: 600; margin-bottom: 5px; color: var(--black); }
+  .card p  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .sos { position: fixed; bottom: 16px; right: 16px; z-index: 200; }
+  .sos-btn { background: var(--red); color: white; border: none; border-radius: 50px;
+             padding: 10px 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+             box-shadow: 0 2px 12px rgba(226,75,74,.4); letter-spacing: .02em; }
+  .sos-panel { display: none; background: var(--card); border: 1px solid var(--border);
+               border-radius: var(--rl); padding: 14px; margin-bottom: 10px; min-width: 260px;
+               box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+  .sos-panel.on { display: block; }
+  .sos-panel h3 { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 10px; }
+  .sos-panel .step { font-size: 13px; padding: 5px 0 5px 22px; position: relative;
+                     border-bottom: 1px solid var(--border); line-height: 1.5; }
+  .sos-panel .step:last-child { border-bottom: none; }
+  .sos-panel .step span { position: absolute; left: 0; font-weight: 700; color: var(--red); }
+  @media print {
+    .sos, .header { display: none !important; }
+    .tabs { display: none !important; }
+    .panel { display: block !important; page-break-after: always; }
+    .panel:last-child { page-break-after: avoid; }
+    body { background: white; font-size: 11px; }
+  }</style>
+<div class="header">
+  <h1>Ácido Hialurónico — Ficha Técnica</h1>
+  <p>Contraindicaciones, precauciones y protocolo de implante</p>
+</div>
+<div class="tabs">
+  <a class="tab" href="index.html" style="text-decoration:none;">← Inicio</a>
+</div>
+<div class="content">
+<div class="alert warn">Uso clínico interno · No entregar directamente al paciente sin adaptación</div>
+
+<div class="sl">Contraindicaciones absolutas</div>
+<ul class="cl">
+  <li>Inyección intravascular</li>
+  <li>Antecedente de cicatrices hipertróficas o queloides</li>
+  <li>Hipersensibilidad conocida a componentes</li>
+  <li>Embarazo y lactancia</li>
+  <li>Zona con proceso inflamatorio/infeccioso activo (acné, herpes activo, etc.)</li>
+  <li>Área previamente corregida con implantes permanentes: no reinyectar sobre ella</li>
+</ul>
+
+<div class="sl">Precauciones</div>
+<ul class="cl">
+  <li>Antiagregantes/anticoagulantes: evitar; autorización del médico prescriptor previa</li>
+  <li>Enfermedad autoinmune conocida: valorar individualmente periodo intercrisis vs. activo y tratamientos asociados</li>
+  <li>Usar exclusivamente agujas/cánulas suministradas con el producto (combinación validada por fabricante)</li>
+  <li>No usar si envase dañado (jeringa, blíster, sellado de membrana)</li>
+  <li>Desechar en contenedor específico según normativa</li>
+  <li>Un solo uso, un solo paciente. No reesterilizar bajo ninguna circunstancia</li>
+</ul>
+
+<div class="sl">Checklist previo al implante</div>
+<ul class="cl">
+  <li>Formación específica actualizada en técnica y producto</li>
+  <li>Conocimiento del producto: indicación, dosis, mecanismo, duración, efectos secundarios, complicaciones típicas y atípicas</li>
+  <li>Historia clínica completa: antecedentes familiares/personales de autoinmunidad o atopia</li>
+  <li>Exploración física + diagnóstico con alternativas terapéuticas</li>
+  <li>Test cutáneo si procede</li>
+  <li>Consentimiento informado explicado, entendido, firmado</li>
+  <li>Seguro de responsabilidad civil vigente</li>
+  <li>Documentación iconográfica pre/post inmediato</li>
+  <li>Diseño del tratamiento con paciente en sedestación</li>
+  <li>Desinfección y asepsia de la zona</li>
+  <li>Cantidad mínima eficaz; no sobrecorregir un plano para compensar déficit de otro</li>
+  <li>Procedimiento solo en espacio autorizado y acondicionado</li>
+</ul>
+
+<div class="sl">Recomendaciones postratamiento (resumen profesional)</div>
+<div class="alert info">Hoja ampliada para el paciente: documento «Indicaciones de cuidados — Ácido hialurónico» (versión paciente).</div>
+<ul class="cl">
+  <li>Moderar ejercicio físico las horas siguientes</li>
+  <li>Evitar exposición solar directa hasta resolución del hematoma si lo hubiera</li>
+  <li>Evitar cosméticos contraindicados horas inmediatas; sin maquillaje primeras 12h</li>
+  <li>Antibiótico/antiinflamatorio/anti-hematoma tópico solo bajo prescripción individual</li>
+  <li>Personalizar hábitos (tabaco, alcohol, fármacos, ejercicio) y fijar revisión según paciente/técnica/material</li>
+</ul>
+
+</div>

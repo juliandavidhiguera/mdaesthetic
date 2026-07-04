@@ -1,0 +1,100 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Herramientas Clínicas — Dr. Higuera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C6A55A; --gold-dk: #9C8140; --black: #0A0A0A;
+    --border: #E6DEC9; --surface: #FBFAF8; --card: #ffffff;
+    --text: #1a1a18; --muted: #6b6459; --subtle: #a39c8c;
+    --r: 8px; --rl: 12px;
+    --font-h: 'Cormorant Garamond', serif; --font-b: 'DM Sans', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); background: var(--surface); color: var(--text); font-size: 14px; line-height: 1.6; }
+  .header { background: var(--black); border-bottom: 2px solid var(--gold);
+            padding: 20px 16px 16px; }
+  .header h1 { font-family: var(--font-h); font-size: 22px; font-weight: 600; color: var(--gold); }
+  .header p { font-size: 11px; color: #c9c4b8; margin-top: 4px; letter-spacing: .02em; text-transform: uppercase; }
+  .content { padding: 20px 16px; max-width: 780px; margin: 0 auto; }
+  .sl { font-family: var(--font-h); font-size: 13px; font-weight: 600; color: var(--gold-dk);
+        margin: 4px 0 12px; }
+  .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .tool-card { display: block; background: var(--card); border: 1px solid var(--border);
+               border-left: 3px solid var(--gold); border-radius: var(--rl);
+               padding: 16px 16px 14px; text-decoration: none; color: inherit;
+               transition: box-shadow .15s, transform .15s; }
+  .tool-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); transform: translateY(-1px); }
+  .tool-card .cat { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+                     color: var(--gold-dk); margin-bottom: 6px; }
+  .tool-card h3 { font-family: var(--font-h); font-size: 17px; font-weight: 600; color: var(--black);
+                  margin-bottom: 4px; }
+  .tool-card p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .tool-card .arrow { font-size: 12px; color: var(--gold-dk); margin-top: 8px; font-weight: 600; }
+  .placeholder { border-left: 3px dashed var(--border); border-style: dashed; opacity: .5; cursor: default; }
+  .placeholder:hover { box-shadow: none; transform: none; }
+  .footer-note { font-size: 11px; color: var(--subtle); margin-top: 24px; border-top: 1px solid var(--border); padding-top: 12px; }
+</style>
+<div class="header">
+  <h1>Herramientas Clínicas</h1>
+  <p>Dr. Julián Higuera · Uso interno</p>
+</div>
+<div class="content">
+  <div class="sl">Protocolos y comparativas</div>
+  <div class="tool-grid">
+    <a class="tool-card" href="protocolo-complicacion-vascular-ah.html">
+      <div class="cat">Urgencias · Estética</div>
+      <h3>Complicación Vascular por AH</h3>
+      <p>Reconocimiento, cronología, hialuronidasa, zonas de riesgo, diagnóstico diferencial, seguimiento.</p>
+      <div class="arrow">Abrir →</div>
+    </a>
+    <a class="tool-card" href="toxinas-botulinicas.html">
+      <div class="cat">Estética · Farmacología</div>
+      <h3>Toxinas Botulínicas</h3>
+      <p>Comparativa Botox, Dysport, Alluzience, Relfydess — potencia, dosis, conservación.</p>
+      <div class="arrow">Abrir →</div>
+    </a>
+  </div>
+
+  <div class="sl" style="margin-top:20px;">Fichas técnicas — Dermocosmética</div>
+  <div class="tool-grid">
+    <a class="tool-card" href="ficha-hpi.html">
+      <div class="cat">Post-procedimiento</div>
+      <h3>Hiperpigmentación Postinflamatoria</h3>
+      <p>Fase de rescate (días 1–7) + fase de tratamiento despigmentante (sem. 2–8).</p>
+      <div class="arrow">Abrir →</div>
+    </a>
+    <a class="tool-card" href="ficha-rosacea.html">
+      <div class="cat">Dermatología</div>
+      <h3>Rosácea</h3>
+      <p>Rutina AM/PM, método sándwich retinol, tratamiento oral (doxiciclina, ivermectina, isotretinoína).</p>
+      <div class="arrow">Abrir →</div>
+    </a>
+    <a class="tool-card" href="ficha-rosacea-melasma.html">
+      <div class="cat">Dermatología</div>
+      <h3>Rosácea + Melasma (combinado)</h3>
+      <p>Protocolo 3 fases + pauta estacional verano/invierno, ácido tranexámico oral.</p>
+      <div class="arrow">Abrir →</div>
+    </a>
+    <a class="tool-card" href="ficha-melasma-resistente.html">
+      <div class="cat">Dermatología</div>
+      <h3>Melasma Resistente</h3>
+      <p>Protocolo 3 fases, cisteamina 5%, mantenimiento indefinido — recidiva 80–90% sin adherencia.</p>
+      <div class="arrow">Abrir →</div>
+    </a>
+    <a class="tool-card" href="ficha-acido-hialuronico.html">
+      <div class="cat">Inyectables</div>
+      <h3>Ácido Hialurónico — Ficha Técnica</h3>
+      <p>Contraindicaciones absolutas, precauciones, checklist previo al implante.</p>
+      <div class="arrow">Abrir →</div>
+    </a>
+    <div class="tool-card placeholder">
+      <div class="cat">Próximamente</div>
+      <h3>Nuevo protocolo</h3>
+      <p>Añadir aquí como <code>&lt;a class="tool-card"&gt;</code> con href al nuevo .html.</p>
+    </div>
+  </div>
+  <div class="footer-note">Cada herramienta es un documento HTML independiente. Añadir uno nuevo: subir el archivo a la raíz del repo + insertar un bloque <code>.tool-card</code> en este índice.</div>
+</div>
