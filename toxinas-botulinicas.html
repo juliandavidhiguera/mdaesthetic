@@ -1,0 +1,218 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toxinas Botulínicas — Comparativa Potencia/Dosis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>:root {
+    --red:    #E24B4A; --red-bg:  #FCEBEB; --red-dk:  #791F1F; --red-txt: #501313;
+    --amb:    #EF9F27; --amb-bg:  #FAEEDA; --amb-dk:  #633806; --amb-txt: #412402;
+    --blu:    #378ADD; --blu-bg:  #E6F1FB; --blu-dk:  #0C447C; --blu-txt: #042C53;
+    --grn:    #639922; --grn-bg:  #EAF3DE; --grn-dk:  #27500A; --grn-txt: #173404;
+    --gold:   #C6A55A; --gold-dk: #9C8140; --black: #0A0A0A;
+    --gray:   #888780; --border: #E6DEC9; --surface: #FBFAF8; --card: #ffffff;
+    --text:   #1a1a18; --muted:  #6b6459; --subtle:  #a39c8c;
+    --r: 8px; --rl: 12px;
+    --font-h: 'Cormorant Garamond', serif; --font-b: 'DM Sans', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); background: var(--surface); color: var(--text); font-size: 14px; line-height: 1.6; }
+  .header { background: var(--black); border-bottom: 2px solid var(--gold);
+            padding: 16px 16px 12px; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-family: var(--font-h); font-size: 19px; font-weight: 600; letter-spacing: .01em; color: var(--gold); }
+  .header p  { font-size: 11px; color: #c9c4b8; margin-top: 3px; }
+  .alert { border-left: 3px solid var(--red); background: var(--red-bg);
+           border-radius: 0 var(--r) var(--r) 0; padding: 10px 12px;
+           font-size: 13px; color: var(--red-txt); line-height: 1.6; margin-bottom: 12px; }
+  .alert.warn  { border-color: var(--amb); background: var(--amb-bg); color: var(--amb-txt); }
+  .alert.info  { border-color: var(--blu); background: var(--blu-bg); color: var(--blu-txt); }
+  .alert.ok    { border-color: var(--grn); background: var(--grn-bg); color: var(--grn-txt); }
+  .tabs { display: flex; overflow-x: auto; gap: 0; background: var(--black);
+          border-bottom: 2px solid var(--gold); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex-shrink: 0; padding: 11px 14px; font-size: 13px; font-weight: 500; color: #8a8478;
+         border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent;
+         white-space: nowrap; transition: all .15s; font-family: var(--font-b); }
+  .tab.on { color: var(--gold); border-bottom-color: var(--gold); }
+  .content { padding: 14px 16px; max-width: 780px; margin: 0 auto; }
+  .panel { display: none; }
+  .panel.on { display: block; }
+  .sl { font-family: var(--font-h); font-size: 13px; font-weight: 600; letter-spacing: .02em;
+        color: var(--gold-dk); margin: 18px 0 8px; text-transform: none; }
+  .sl:first-child { margin-top: 0; }
+  .tl { border-left: 2px solid var(--border); margin-left: 6px; }
+  .ti { position: relative; padding: 0 0 18px 22px; }
+  .ti:last-child { padding-bottom: 0; }
+  .dot { position: absolute; left: -7px; top: 3px; width: 12px; height: 12px;
+         border-radius: 50%; border: 2px solid var(--surface); }
+  .dot.r { background: var(--red); } .dot.a { background: var(--amb); }
+  .dot.b { background: var(--blu); } .dot.g { background: var(--grn); }
+  .ti-h { font-size: 13px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+  .ti-b { font-size: 13px; color: var(--muted); line-height: 1.65; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px;
+           border-radius: 4px; letter-spacing: .02em; }
+  .br { background: var(--red-bg);  color: var(--red-dk); }
+  .ba { background: var(--amb-bg);  color: var(--amb-dk); }
+  .bb { background: var(--blu-bg);  color: var(--blu-dk); }
+  .bg { background: var(--grn-bg);  color: var(--grn-dk); }
+  ul.cl { list-style: none; padding: 0; }
+  ul.cl li { padding: 3px 0 3px 18px; position: relative; font-size: 13px;
+              color: var(--muted); line-height: 1.55; }
+  ul.cl li::before { content: '○'; position: absolute; left: 0; color: var(--gold); font-size: 11px; top: 4px; }
+  .dc { background: var(--card); border: 1px solid var(--border); border-radius: var(--r);
+        padding: 10px 13px; margin: 8px 0; border-left: 3px solid var(--gold); }
+  .dc-h { font-family: var(--font-h); font-size: 15px; font-weight: 600; margin-bottom: 7px; color: var(--black); }
+  .dc-r { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; }
+  .kv span:first-child { display: block; font-size: 10px; text-transform: uppercase;
+                          letter-spacing: .05em; color: var(--subtle); margin-bottom: 1px; }
+  .kv span:last-child  { font-size: 13px; font-weight: 600; color: var(--black); }
+  .zg { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 8px; margin-top: 6px; }
+  .zc { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 10px 11px; }
+  .zc.r { border-left: 3px solid var(--red); } .zc.a { border-left: 3px solid var(--amb); }
+  .zc.b { border-left: 3px solid var(--blu); }
+  .zc-h { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+  .zc-h.r { color: var(--red-dk); } .zc-h.a { color: var(--amb-dk); } .zc-h.b { color: var(--blu-dk); }
+  .zc p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .tbl-wrap { overflow-x: auto; margin: 8px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 420px; }
+  th { text-align: left; font-size: 10px; font-weight: 700; letter-spacing: .05em;
+       text-transform: uppercase; color: var(--gold-dk); padding: 5px 8px 7px;
+       border-bottom: 2px solid var(--gold); }
+  td { padding: 7px 8px; border-bottom: 1px solid var(--border); color: var(--muted); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { color: var(--black); font-weight: 600; }
+  .sep { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 8px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--rl); padding: 12px 13px; }
+  .card h3 { font-family: var(--font-h); font-size: 14px; font-weight: 600; margin-bottom: 5px; color: var(--black); }
+  .card p  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .sos { position: fixed; bottom: 16px; right: 16px; z-index: 200; }
+  .sos-btn { background: var(--red); color: white; border: none; border-radius: 50px;
+             padding: 10px 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+             box-shadow: 0 2px 12px rgba(226,75,74,.4); letter-spacing: .02em; }
+  .sos-panel { display: none; background: var(--card); border: 1px solid var(--border);
+               border-radius: var(--rl); padding: 14px; margin-bottom: 10px; min-width: 260px;
+               box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+  .sos-panel.on { display: block; }
+  .sos-panel h3 { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 10px; }
+  .sos-panel .step { font-size: 13px; padding: 5px 0 5px 22px; position: relative;
+                     border-bottom: 1px solid var(--border); line-height: 1.5; }
+  .sos-panel .step:last-child { border-bottom: none; }
+  .sos-panel .step span { position: absolute; left: 0; font-weight: 700; color: var(--red); }
+  @media print {
+    .sos, .header { display: none !important; }
+    .tabs { display: none !important; }
+    .panel { display: block !important; page-break-after: always; }
+    .panel:last-child { page-break-after: avoid; }
+    body { background: white; font-size: 11px; }
+  }</style>
+<div class="header">
+  <h1>Toxinas Botulínicas — Comparativa Potencia/Dosis</h1>
+  <p>Botox · Dysport · Alluzience · Relfydess</p>
+</div>
+<div class="content">
+  <div class="alert info">Unidades no intercambiables entre marcas — bioensayo propio por producto. No usar ratios de conversión como dosis exacta, solo como referencia de partida.</div>
+
+  <div class="sl">Comparativa de potencia y formulación</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Parámetro</th><th>Botox</th><th>Dysport</th><th>Alluzience</th><th>Relfydess</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Molécula</td>
+          <td>onabotulinumtoxinA</td>
+          <td>abobotulinumtoxinA</td>
+          <td>abobotulinumtoxinA líquida</td>
+          <td>daxibotulinumtoxinA</td>
+        </tr>
+        <tr>
+          <td>Formulación</td>
+          <td>Polvo, reconstituir</td>
+          <td>Polvo, reconstituir</td>
+          <td>Líquida lista para usar</td>
+          <td>Líquida lista para usar</td>
+        </tr>
+        <tr>
+          <td>Concentración</td>
+          <td>50U/100U vial</td>
+          <td>300U/500U vial</td>
+          <td>10U/0,05mL</td>
+          <td>10U/0,1mL (100–150U/vial)</td>
+        </tr>
+        <tr>
+          <td>Ratio vs Botox</td>
+          <td>1 (referencia)</td>
+          <td>1:2,5–3</td>
+          <td>1:2,5–3</td>
+          <td>~1:1–1:1,25 (no validado oficialmente)</td>
+        </tr>
+        <tr>
+          <td>Duración</td>
+          <td>3–4 meses</td>
+          <td>3–4 meses</td>
+          <td>3–4 meses</td>
+          <td>~6 meses</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sl">Dosificación glabela / canto lateral</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Producto</th><th>Glabela</th><th>Canto lateral</th><th>Combinado</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Botox</td>
+          <td>20U (4–5 pts × 4–5U)</td>
+          <td>24U (12U/lado)</td>
+          <td>44U</td>
+        </tr>
+        <tr>
+          <td>Dysport</td>
+          <td>50U (5 pts × 10U)</td>
+          <td>Sin indicación EU combinada estándar</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Alluzience</td>
+          <td>50U (5 pts × 10U)</td>
+          <td>Extrapolado de Dysport</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Relfydess</td>
+          <td>50U (5 pts × 10U, 0,1mL/pt)</td>
+          <td>60U (30U/lado)</td>
+          <td>110U (1,1mL)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sl">Preparación y conservación</div>
+  <div class="dc">
+    <div class="dc-h">Reconstitución / uso</div>
+    <div class="dc-r">
+      <div class="kv"><span>Botox</span><span>Reconstituido: uso &lt;24h refrigerado</span></div>
+      <div class="kv"><span>Dysport</span><span>Reconstituido: uso &lt;24h refrigerado</span></div>
+      <div class="kv"><span>Alluzience</span><span>Lista, 2–8°C, no reconstituir</span></div>
+      <div class="kv"><span>Relfydess</span><span>Lista, 2–8°C, no reconstituir</span></div>
+    </div>
+  </div>
+
+  <div class="sl">Puntos críticos</div>
+  <ul class="cl">
+    <li><span class="badge bb">Reproducibilidad</span> Formulaciones líquidas (Alluzience, Relfydess) eliminan error de dilución manual — ventaja de reproducibilidad, no de potencia</li>
+    <li><span class="badge bg">Diferenciador</span> Relfydess: única con evidencia fase III de duración ~6 meses, por péptido excipiente (RTP004), no por exceso de unidades</li>
+    <li><span class="badge ba">Conversión</span> Ratio 1:2,5 Botox↔Dysport/Alluzience es el más usado clínicamente (Speywood units); sin ratio oficial validado para Relfydess</li>
+    <li><span class="badge br">Trazabilidad</span> No mezclar productos en el mismo paciente sin registro de lote — farmacovigilancia obligatoria</li>
+  </ul>
+
+  <div class="sl">Intervalo mínimo retratamiento</div>
+  <div class="alert">12 semanas — válido para las 4 moléculas, sin excepción por formulación líquida o duración prolongada.</div>
+</div>
