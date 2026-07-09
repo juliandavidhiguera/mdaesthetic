@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analítica de Seguimiento | Clínica Dr. Higuera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0A0A; --gold:#C6A55A; --gold-dark:#8A6E32; --cream:#FBFAF8;
+    --line:rgba(10,10,10,0.1); --grey:#5C5854; --red:#B3261E; --red-bg:#FDEEED;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--black);line-height:1.55;}
+  .doc{max-width:980px;margin:0 auto;padding:0 24px 80px;}
+  header.top{background:var(--black);color:var(--cream);padding:18px 24px;}
+  header.top .bar{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+  header.top .bar span:first-child{color:var(--gold);font-weight:600;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:44px;color:var(--black);margin:36px 0 6px;line-height:1.1;}
+  .subtitle{color:var(--gold-dark);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px;}
+  .meta{font-size:14px;color:var(--grey);margin-bottom:6px;}
+  .meta b{color:var(--black);}
+  h2{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);margin:40px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+  table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:14px;}
+  th{background:var(--black);color:var(--cream);text-align:left;padding:10px 12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--grey);}
+  tr:nth-child(even) td{background:rgba(198,165,90,0.06);}
+  td:first-child{color:var(--black);font-weight:600;white-space:nowrap;}
+  .note{background:rgba(198,165,90,0.1);border-left:3px solid var(--gold);padding:12px 16px;font-size:13.5px;font-style:italic;color:var(--black);margin:8px 0 20px;}
+  .warn{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 16px;font-size:13.5px;font-style:italic;color:var(--black);margin:8px 0 20px;}
+  footer{margin-top:60px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;color:var(--grey);text-align:center;}
+  @media (max-width:640px){h1{font-size:32px;} table{font-size:12.5px;} td,th{padding:8px;}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar"><span>Clínica Dr. Higuera</span><span>Documento interno · Uso médico</span></div></header>
+<div class="doc">
+  <h1>Analítica de Seguimiento</h1>
+  <p class="subtitle">Esquema de monitorización por fármaco sistémico</p>
+  <p class="meta"><b>Uso:</b> Aplicable a los protocolos de Acné y Dermatitis Seborreica cuando se prescribe tratamiento sistémico</p>
+
+  <h2>Isotretinoína oral</h2>
+  <table>
+    <tr><th>Momento</th><th>Hemograma</th><th>Perfil hepático</th><th>Perfil lipídico + Test embarazo</th></tr>
+    <tr><td>Basal (antes de iniciar)</td><td>Sí</td><td>AST, ALT, GGT</td><td>Colesterol total, TG, HDL/LDL + βhCG obligatorio si mujer fértil</td></tr>
+    <tr><td>Semana 4</td><td>Opcional</td><td>AST, ALT, GGT</td><td>Perfil lipídico + βhCG mensual (mujer fértil)</td></tr>
+    <tr><td>Cada 4–8 semanas</td><td>Si clínica lo sugiere</td><td>AST, ALT, GGT</td><td>Perfil lipídico si alterado previamente + βhCG mensual</td></tr>
+    <tr><td>Fin de tratamiento</td><td>Opcional</td><td>AST, ALT, GGT</td><td>Perfil lipídico + βhCG</td></tr>
+  </table>
+  <div class="warn">Test de embarazo mensual en mujeres en edad fértil es obligatorio por normativa durante todo el tratamiento con isotretinoína, no opcional.</div>
+
+  <h2>Antibióticos sistémicos prolongados (doxiciclina, minociclina &gt;6–8 semanas)</h2>
+  <table>
+    <tr><th>Momento</th><th>Función hepática</th><th>Otros</th></tr>
+    <tr><td>Basal</td><td>Solo si factores de riesgo previos</td><td>Ninguno específico</td></tr>
+    <tr><td>Si tratamiento &gt;3 meses</td><td>AST, ALT</td><td>Vigilar clínica de fotosensibilidad y candidiasis</td></tr>
+  </table>
+
+  <h2>Antimicóticos sistémicos (itraconazol, fluconazol)</h2>
+  <table>
+    <tr><th>Momento</th><th>Función hepática</th><th>Otros</th></tr>
+    <tr><td>Basal</td><td>AST, ALT, GGT</td><td>Revisar interacciones farmacológicas (CYP3A4)</td></tr>
+    <tr><td>Si tratamiento &gt;4 semanas o clínica</td><td>AST, ALT, GGT</td><td>Suspender si transaminasas &gt;3× límite superior normal</td></tr>
+  </table>
+
+  <div class="note">Esquema orientativo — ajustar frecuencia según protocolo del centro, normativa local vigente y perfil de riesgo individual del paciente.</div>
+
+  <footer>Clínica Dr. Higuera · Documento de referencia clínica interna · No sustituye el criterio médico individualizado</footer>
+</div>
+</body>
+</html>
